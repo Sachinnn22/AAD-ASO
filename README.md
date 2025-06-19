@@ -1,3 +1,3 @@
 ## 📄 Documentation
 
-[Download User Guide (PDF)](docs/user-guide.pdf)
+[Download User Guide (PDF)](pdf/jsp.pdf)
