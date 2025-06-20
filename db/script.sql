@@ -1,22 +1,23 @@
-CREATE DATABASE IF NOT EXISTS cms;
-USE cms;
-
-CREATE TABLE complaint (
-                           cid         VARCHAR(40)  NOT NULL PRIMARY KEY,
-                           uname       VARCHAR(100) NOT NULL,
-                           subject     VARCHAR(255),
-                           description TEXT,
-                           date        VARCHAR(30)
-);
+CREATE DATABASE IF NOT EXISTS systems;
+USE systems;
 
 CREATE TABLE user (
-                      uid       INT AUTO_INCREMENT PRIMARY KEY,
-                      uname     VARCHAR(100) NOT NULL,
-                      upassword VARCHAR(20)  NOT NULL,
-                      urole     VARCHAR(50) DEFAULT 'user' NOT NULL
+                      uid INT AUTO_INCREMENT PRIMARY KEY,
+                      uname VARCHAR(100) NOT NULL UNIQUE,
+                      upassword VARCHAR(255) NOT NULL,
+                      urole ENUM('admin', 'user') NOT NULL
 );
 
 INSERT INTO user (uname, upassword, urole)
 VALUES
-    ('testuser', 'password123', 'user'),
-    ('admin', 'adminpass', 'admin');
+    ('user1', 'user123', 'user'),
+    ('user2', 'user2123', 'user'),
+    ('admin', 'admin123', 'admin');
+
+CREATE TABLE complaint (
+                           cid INT AUTO_INCREMENT PRIMARY KEY,
+                           uname VARCHAR(100) NOT NULL,
+                           description TEXT NOT NULL,
+                           date DATE NOT NULL,
+                           status ENUM('Pending', 'In Progress', 'Resolved') DEFAULT 'Pending'
+);

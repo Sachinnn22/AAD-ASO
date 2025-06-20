@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class LoginModel {
     public String checkLogin(String username, String password){
-        String url = "jdbc:mysql://localhost:3306/cms";
+        String url = "jdbc:mysql://localhost:3306/systems";
         String user = "root";
         String pass = "mysql";
 

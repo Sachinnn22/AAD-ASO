@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ComplainModel {
 
-    private final String url = "jdbc:mysql://localhost:3306/cms";
+    private final String url = "jdbc:mysql://localhost:3306/systems";
     private final String user = "root";
     private final String pass = "mysql";
 
